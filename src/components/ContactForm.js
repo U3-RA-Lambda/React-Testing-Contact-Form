@@ -41,7 +41,7 @@ const ContactForm = () => {
 
         <div>
           <label htmlFor="email"
-          data-testid="lastNameInput" placeholder="bluebill1049@hotmail.com">
+          data-testid="emailInput" placeholder="bluebill1049@hotmail.com">
             Email*
           </label>
           <input name="email" ref={register({ required: true })} />
@@ -51,7 +51,7 @@ const ContactForm = () => {
         </div>
         <div>
           <label htmlFor="message">Message</label>
-          <textarea name="message" ref={register({ required: false })} />
+          <textarea name="message" data-testid="textInput" ref={register({ required: false })} />
         </div>
         {data && (
           <pre style={{ textAlign: "left", color: "white" }}>
