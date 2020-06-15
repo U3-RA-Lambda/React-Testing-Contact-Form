@@ -19,7 +19,18 @@ test('all required fields to show on screen', () => {
 
 
 
-test('does text in input field match user text input', () => {
+test("check that elements start with empty input", () => {
+  const wrapper = render(<App />);
+
+  expect(wrapper.getByTestId('firstNameInput')).not.toHaveValue();
+  expect(wrapper.getByTestId('lastNameInput')).not.toHaveValue();
+  expect(wrapper.getByTestId('emailInput')).not.toHaveValue();
+  expect(wrapper.getByTestId('text-area')).not.toHaveValue();
+});
+
+
+
+test('does text in firstNameInput field match user text input', () => {
   fireEvent.change((screen.getByTestId('firstNameInput')), { target: { value: 'Testing firstName input field' } })
   expect((screen.getByTestId('firstNameInput')).value).toBe('Testing firstName input field')
 });
